@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Images</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+     body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    height: 1500vh; /* Ensure there is enough scrollable area */
+    width: 100vw;
+    text-align: center;overflow-x: hidden;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 columns for small images */
+    gap: 5px;
+    width: 100%;
+    height: 90vh;
+    box-sizing: border-box;
+    padding: 10px;
+    position: fixed;
+    justify-items: space-between;
+    text-align: center;
+    justify-items: center; /* Center large items within each column */
+    align-items: center;
+    
+}
+
+.scroll-image {
+    transition: height 0.3s ease-in-out, grid-column 0.3s ease-in-out, all 0.3s ease-in-out;
+    height: 5vh; /* Default height */
+    width: 100%; /* Full width of grid cell */
+    object-fit:contain;
+    text-align: center;
+    
+}
+
+.scroll-image.large {
+    height: 90vh;
+    width:auto;
+    grid-column: span 6; /* Large images take up full row */
+    text-align: center;
+   
+}
+
+.scroll-image {
+    width: 100%;
+    max-height: 100vh;
+    display: block;
+    object-fit: contain;
+    transition: transform 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    height: 3vh; /* Default height */
+}
+
+.scroll-image.large {
+    height: 90vh;
+    grid-column: span 1; /* Each large image takes up one-third of the row */
+    justify-self: stretch; /* Ensure large images fill the grid cell horizontally */
+    align-self: stretch; /* Ensure large images fill the grid cell vertically */
+}
+
+.scroll-image.small-left {
+    justify-self: start; /* Align small images to the left */
+    align-self: start; /* Align small images to the top */
+}
+
+.scroll-image.small-right {
+    justify-self: end; /* Align small images to the right */
+    align-self: start; /* Align small images to the top */
+}
+
+    </style>
+    <div class="image-container">
+        <!-- Using placeholder images for demonstration -->
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/mensstory-11-10-2019-3129www.jpg" alt="Image 1" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/runa-viu-30-03-2021-10217bw-1.jpg" alt="Image 2" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/bnlf-f6-29-03-2021-8343www.jpg" alt="Image 3" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/mensstory-11-10-2019-3860querwww-2-2048x1535.jpg" alt="Image 4" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/uni-wien-fr-studentin-salma-mohhamed-00581www-2048x1535.jpg" alt="Image 5" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/stad-wien-sommerkampagne-cooling-spot-mariam-06-2021-0076www-3-2048x1365.jpg" alt="Image 6" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/runa-viu-30-03-2021-9931www-2-2048x1535.jpg" alt="Image 7" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/landscape-bolivien-08-2022-1817www-2048x1365.jpg" alt="Image 8" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/jordanien-10-2019-597www-2048x1365.jpg" alt="Image 9" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/landscape-bolivien-08-2022-4180www-2048x1365.jpg" alt="Image 10" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/landscape-bolivien-08-2022-2414www-2048x1365.jpg" alt="Image 11" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/mensstory-11-10-2019-3129www.jpg" alt="Image 12" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/jordanien-10-2019-597www-2048x1365.jpg" alt="Image 13" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/mensstory-11-10-2019-3129www.jpg" alt="Image 14" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/runa-viu-30-03-2021-10217bw-1.jpg" alt="Image 15" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/bnlf-f6-29-03-2021-8343www.jpg" alt="Image 16" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/mensstory-11-10-2019-3860querwww-2-2048x1535.jpg" alt="Image 16" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/uni-wien-fr-studentin-salma-mohhamed-00581www-2048x1535.jpg" alt="Image 17" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/stad-wien-sommerkampagne-cooling-spot-mariam-06-2021-0076www-3-2048x1365.jpg" alt="Image 18" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/runa-viu-30-03-2021-9931www-2-2048x1535.jpg" alt="Image 19" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/landscape-bolivien-08-2022-1817www-2048x1365.jpg" alt="Image 20" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/jordanien-10-2019-597www-2048x1365.jpg" alt="Image 21" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/landscape-bolivien-08-2022-4180www-2048x1365.jpg" alt="Image 22" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/landscape-bolivien-08-2022-2414www-2048x1365.jpg" alt="Image 23" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/10/mensstory-11-10-2019-3129www.jpg" alt="Image 24" class="scroll-image">
+        <img src="https://joachimhaslinger.com/website2022/wp-content/uploads/2022/11/jordanien-10-2019-597www-2048x1365.jpg" alt="Image 25" class="scroll-image">
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.scroll-image');
+    let currentIndex = 0;
+
+    function updateImageSizes() {
+        images.forEach((img, index) => {
+            if (index === currentIndex) {
+                img.classList.add('large');
+            } else {
+                img.classList.remove('large');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        // Calculate the new current index based on scroll position
+        const newCurrentIndex = Math.floor(window.scrollY / window.innerHeight);
+        if (newCurrentIndex !== currentIndex && newCurrentIndex < images.length) {
+            currentIndex = newCurrentIndex;
+            updateImageSizes();
+        }
+    });
+
+    updateImageSizes(); // Initial setup
+});
+
+
+
+    </script>
+</body>
+</html>
